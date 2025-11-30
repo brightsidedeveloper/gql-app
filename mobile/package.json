@@ -1,0 +1,40 @@
+{
+  "name": "mobile",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "schema": "npx get-graphql-schema http://localhost:8080/query > schema.graphql",
+    "relay": "relay-compiler"
+  },
+  "relay": {
+    "src": "./src",
+    "schema": "./schema.graphql",
+    "language": "typescript",
+    "eagerEsModules": true
+  },
+  "dependencies": {
+    "expo": "~54.0.25",
+    "expo-status-bar": "~3.0.8",
+    "react": "19.1.0",
+    "react-native": "0.81.5",
+    "react-relay": "^20.1.1",
+    "relay-runtime": "^20.1.1"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.28.5",
+    "@types/react": "~19.1.0",
+    "@types/react-relay": "^18.2.1",
+    "@types/relay-runtime": "^19.0.3",
+    "babel-plugin-relay": "^20.1.1",
+    "babel-preset-expo": "^54.0.7",
+    "get-graphql-schema": "^2.1.2",
+    "graphql": "^16.12.0",
+    "relay-compiler": "^20.1.1",
+    "typescript": "~5.9.2"
+  },
+  "private": true
+}
