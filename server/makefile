@@ -1,4 +1,4 @@
-PHONY: up down down-clean psql gen
+PHONY: up down fresh migrate-up migrate-down migrate-create psql gen port
 
 include .env
 export
@@ -9,7 +9,7 @@ up:
 down:
 	docker compose down
 
-down-clean:
+fresh:
 	docker compose down -v
 
 migrate-up:
@@ -32,3 +32,5 @@ psql:
 gen:
 	go tool gqlgen generate
 
+port:
+	ifconfig | grep "inet " | grep -v 127.0.0.1
