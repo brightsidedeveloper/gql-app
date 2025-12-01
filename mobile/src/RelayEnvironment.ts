@@ -1,6 +1,6 @@
 import { Environment, Network, FetchFunction } from 'relay-runtime'
 
-const HTTP_ENDPOINT = 'http://192.168.86.119:8080/query'
+const HTTP_ENDPOINT = 'http://192.168.86.38:8080/query'
 
 const fetchGraphQL: FetchFunction = async (request, variables) => {
   const resp = await fetch(HTTP_ENDPOINT, {
